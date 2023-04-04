@@ -1,0 +1,13 @@
+# 忽略目录
+dist2/
+website/
+website-dist/
+typings/
+packages/
+ 
+# 忽略指定文件
+babel.config.js
+*.map
+1.md
+lerna.json
+tsconfig.json

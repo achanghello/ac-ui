@@ -1,0 +1,28 @@
+@import "./common/var.scss";
+@import "./mixins/mixin.scss";
+
+// ac-button ---创建基层样式
+@include b(select-dropdown) {
+    @include e(item) {
+      font-size: 14px;
+      padding: 0 20px;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #606060;
+      height: 34px;
+      line-height: 34px;
+      box-sizing: border-box;
+      cursor: pointer;
+  
+      &.hover, &:hover {
+        background-color: #f5f7fa;
+      }
+  
+      &.selected {
+        color: #409eff;
+        font-weight: bold;
+      }
+    }
+  }

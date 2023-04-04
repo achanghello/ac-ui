@@ -1,0 +1,15 @@
+@import "./common/var.scss";
+@import "./mixins/mixin.scss";
+
+@include b(col){
+    @for $i from 0 through 24 {
+        &.ac-col-span-#{$i} {
+          flex: (calc(1 / 24) * $i * 100) * 1%;
+          max-width: (calc(1 / 24) * $i * 100) * 1%;
+        }
+      
+        &.ac-col-offset-#{$i} {
+          margin-left: (calc(1/24) * $i * 100) * 1%;
+        }
+    }
+}

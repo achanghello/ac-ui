@@ -1,0 +1,25 @@
+@import "./mixins/config.scss";
+@font-face {
+    font-family: "ac-icons"; /* Project id 3953843 */
+    src: url('./fonts/iconfont.woff2') format('woff2'),
+         url('./fonts/iconfont.woff') format('woff'),
+         url('./fonts/iconfont.ttf') format('truetype');
+  }
+  
+  [class^='#{$namespace}-icon-'] {
+    font-family: "ac-icons" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .ac-icon-jiazai:before {
+    content: "\e629";
+  }
+  
+  .ac-icon-jiazai1:before {
+    content: "\e603";
+  }
+  
+  

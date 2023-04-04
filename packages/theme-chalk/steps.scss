@@ -1,0 +1,73 @@
+.steps {
+  display: flex;
+  .step {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    .step-number {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+
+    .step-label {
+      font-size: 16px;
+    }
+  }
+  .step.active {
+    background-color: #e6f7ff;
+  }
+}
+
+.process {
+  //   width: 700px;
+  //   margin: 40px auto 80px;
+
+  .process-1 {
+    height: 21px;
+    width: 230px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 230px;
+      height: 2px;
+      background: #e8e8e8;
+      position: absolute;
+      bottom: -14px;
+      left: -50%;
+    }
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #e8e8e8;
+      border-radius: 16px;
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid #fff;
+      z-index: 10;
+    }
+  }
+
+  .process-1:first-child {
+    &::before {
+      display: none;
+    }
+  }
+
+  .process-1.active {
+    &::before,
+    &::after {
+      background-color: #409eff;
+    }
+  }
+}

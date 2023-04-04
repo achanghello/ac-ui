@@ -1,0 +1,15 @@
+// 各种颜色按钮的背景颜色、边框、文字颜色
+@mixin button-type($color,$border-color,$background-color,$hoverfocuscolor,$border-hoverfocuscolor,$background-hoverfocuscolor,$border-activecolor) {
+    color: $color;
+    border-color: $border-color;
+    background: $background-color;
+    &:hover,
+    &:focus {
+      color: $hoverfocuscolor;
+      border-color: $border-hoverfocuscolor;
+      background-color: $background-hoverfocuscolor;
+    }
+    &:active {
+      border-color: $border-activecolor;
+    }
+}

@@ -1,0 +1,91 @@
+.ac-input {
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    display: flex;
+    .ac-input__inner {
+      -webkit-appearance: none;
+      background-color: #fff;
+      background-image: none;
+      border-radius: 4px;
+      border: 1px solid #dcdfe6;
+      box-sizing: border-box;
+      color: #606266;
+      display: inline-block;
+      font-size: inherit;
+      height: 40px;
+      line-height: 40px;
+      outline: none;
+      padding: 0 15px;
+      transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      flex: 1;
+      &:focus {
+        outline: none;
+        border-color: #409eff;
+      }
+      &.is-disabled {
+        background-color: #f5f7fa;
+        border-color: #e4e7ed;
+        color: #c0c4cc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .ac-input-group.ac-input-group--append {
+    .ac-input__inner {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .ac-input__append {
+      .ac-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        height: 40px;
+      }
+    }
+  }
+  .ac-input-group.ac-input-group--prepend {
+    .ac-input__inner {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  
+    .ac-input__prepend {
+      /*.ac-button {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          height: 40px;
+       }*/
+      .ac-select .ac-select__inner {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+  
+  .ac-input--suffix {
+      .ac-input__inner {
+        padding-right: 30px;
+      }
+      .ac-input__suffix {
+        position: absolute;
+        height: 100%;
+        right: 10px;
+        top: 0;
+        line-height: 40px;
+        text-align: center;
+        color: #c0c4cc;
+        transition: all .3s;
+        z-index: 900;
+        i {
+          color: #c0c4cc;
+          font-size: 14px;
+          cursor: pointer;
+          transition: color .2s cubic-bezier(.645,.045,.355,1);
+        }
+        .ac-icon-yanjing-active {
+          color: #409eff;
+        }
+      }
+    }

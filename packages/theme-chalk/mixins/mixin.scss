@@ -1,0 +1,42 @@
+@import "../common/var.scss";
+// ac-button ---创建基层样式
+// @include b(button) {}
+
+// ac-button is-disable
+// @include b(button) {
+//     @include when(disable) {}
+// }
+
+@mixin b($block) {
+    $B: $namespace + $common-separator + $block;
+
+    .#{$B} {
+        @content;
+    }
+}
+
+// is-
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content;
+        }
+    }
+}
+// &--XXX
+@mixin m($modifier) {
+    @at-root {
+        #{&+$modifier-separator+$modifier} {
+            @content;
+        }
+    }
+}
+
+// &__XXX
+@mixin e($element) {
+    @at-root {
+        #{&+$element-separator+$element} {
+            @content;
+        }
+    }
+}

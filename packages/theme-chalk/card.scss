@@ -1,0 +1,79 @@
+@import "./common/var.scss";
+@import "./mixins/mixin.scss";
+
+
+$--border-color-lighter: #EBEEF5 !default;
+
+/* Card
+--------------------------*/
+/// color||Color|0
+$--card-border-color: $--border-color-lighter  !default;
+$--card-border-radius: 4px !default;
+/// padding||Spacing|3
+$--card-padding: 20px !default;
+
+$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$--card-padding: 20px !default;
+
+// ac-card ---创建基层样式
+@include b(card) {
+    border: 1px solid $--card-border-color;
+    border-radius: $--card-border-radius;
+    background-color: #FFF;
+    overflow: hidden;
+    color: #303133;
+    transition: 0.3s;
+    @include when(never-shadow) {
+        box-shadow: none;
+    }
+
+    @include when(always-shadow) {
+        box-shadow: $--box-shadow-light;
+    }
+
+    @include when(hover-shadow) {
+
+        &:hover,
+        &:focus {
+            box-shadow: $--box-shadow-light;
+        }
+    }
+
+    @include e(header) {
+        padding: #{$--card-padding - 2 $--card-padding};
+        border-bottom: 1px solid $--card-border-color;
+        box-sizing: border-box;
+    }
+
+    @include e(body) {
+        padding: $--card-padding;
+    }
+    animation-name: dh;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    // position: relative;
+}
+
+@keyframes dh {
+    0% {
+        //width: 10%;
+        //height: 20px;
+        //left: 45%;
+        //top: 50px;
+        transform:scale(0.4);
+        -webkit-transform:scale(0.4);
+        -moz-transform:scale(0.4);
+        -ms-transform:scale(0.4);
+        -o-transform:scale(0.4);
+}
+    100% {
+        //width: 100%;
+        //left: 0;
+        //top: 0;
+        transform:scale(1);
+        -webkit-transform:scale(1);
+        -moz-transform:scale(1);
+        -ms-transform:scale(1);
+        -o-transform:scale(1);
+}
+}
